@@ -1,4 +1,4 @@
-def call($Image) {
+def call(String Image) {
     echo "building the docker image for the branch $BRANCH_NAME"
     withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         sh "docker build -t $Image ."
